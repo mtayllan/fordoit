@@ -8,5 +8,6 @@
   "ruby.format": "standard",
   "[ruby]": {
     "editor.defaultFormatter": "rebornix.ruby"
-  }
+  },
+  "standard.autoFixOnSave": true
 }
