@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(task) do %>
+  <div class="flex items-center gap-3 my-2">
+    <%= render partial: "tasks/#{task.status}_task", locals: { task: task } %>
+  </div>
+<% end %>

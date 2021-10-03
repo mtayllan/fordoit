@@ -1,0 +1,17 @@
+<%= turbo_stream_from :tasks %>
+<div class="container mx-auto flex flex-col content-center mt-5 lg:mt-10">
+  <!-- header -->
+  <h2 class="text-xl text-center mb-2">Main Tasks</h2>
+
+  <!-- form -->
+  <div class="mb-2">
+    <%= render 'form', task: @task %>
+  </div>
+
+  <!-- list -->
+  <div>
+    <%= turbo_frame_tag :tasks do %>
+      <%= render @tasks %>
+    <% end %>
+  </div>
+</div>

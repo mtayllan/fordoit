@@ -1,0 +1,6 @@
+<%= form_with(model: task, id: 'task_form') do |f| %>
+  <div class="flex">
+    <%= f.text_field :title, class: "w-full shadow border rounded mr-2 p-2", placeholder: "Add todo" %>
+    <%= f.submit "Add", class: "p-2 text-blue-500 bg-transparent border-2 border-blue-500 rounded hover:text-white hover:bg-blue-500 cursor-pointer" %>
+  </div>
+<% end %>
