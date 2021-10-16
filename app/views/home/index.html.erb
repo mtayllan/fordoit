@@ -9,6 +9,6 @@
     Events
   </div>
   <div class="flex-1 text-center">
-    Backlog
+    <%= render partial: 'backlog', locals: { backlog_task: @backlog_task, backlog_tasks: @backlog_tasks } %>
   </div>
 </div>

@@ -1,0 +1,17 @@
+<%= turbo_stream_from :in_backlog_tasks %>
+<div class="container mx-auto flex flex-col content-center mt-5 lg:mt-10">
+  <!-- header -->
+  <h2 class="text-xl text-center mb-2">Backlog</h2>
+
+  <!-- form -->
+  <div class="mb-2">
+    <%= render partial: 'tasks/in_backlog_form', locals: { task: backlog_task } %>
+  </div>
+
+  <!-- list -->
+  <div>
+    <%= turbo_frame_tag :in_backlog_tasks do %>
+      <%= render backlog_tasks %>
+    <% end %>
+  </div>
+</div>

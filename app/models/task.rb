@@ -1,8 +1,5 @@
 class Task < ApplicationRecord
-  enum status: [:pending, :completed, :cancelled]
+  enum status: [:pending, :completed, :cancelled, :in_backlog]
 
   validates :title, presence: true
-
-  after_create_commit { broadcast_append_to :tasks }
-  after_update_commit { broadcast_replace_to :tasks }
 end
