@@ -16,20 +16,19 @@ class InBacklogTasksController < ApplicationController
 
   def update
     task = Task.find(params[:id])
-    task.update(status: params[:pending])
+    task.update(status: :pending)
 
-    render turbo_stream: turbo_stream.replace(
-      dom_id(task),
-      partial: "tasks/task",
-      locals: {task: task}
-    )
+    render turbo_stream: [
+      turbo_stream.remove(dom_id(task)),
+      turbo_stream.append(:tasks, partial: "tasks/task", locals: {task: task})
+    ]
   end
 
   def destroy
     task = Task.find(params[:id])
     task.destroy
 
-    render turbo_stream: {}
+    render turbo_stream: turbo_stream.remove(dom_id(task))
   end
 
   private

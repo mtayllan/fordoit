@@ -1,3 +1,10 @@
 <div class="w-full text-left">
   <%= task.title %>
 </div>
+<div>
+  <%= button_to 'Move', in_backlog_task_path(task), method: :patch, class: "p-1 text-blue-500 bg-transparent border-2 border-blue-500 rounded hover:text-white hover:bg-blue-500 cursor-pointer" %>
+</div>
+<div>
+  <%= button_to 'Remove', in_backlog_task_path(task), method: :delete, class: "p-1 text-red-500 bg-transparent border-2 border-red-500 rounded hover:text-white hover:bg-red-500 cursor-pointer" %>
+</div>
+
