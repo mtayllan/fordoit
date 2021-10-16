@@ -5,13 +5,13 @@
 
   <!-- form -->
   <div class="mb-2">
-    <%= render 'form', task: @task %>
+    <%= render partial: 'tasks/form', locals: { task: task } %>
   </div>
 
   <!-- list -->
   <div>
     <%= turbo_frame_tag :tasks do %>
-      <%= render @tasks %>
+      <%= render tasks %>
     <% end %>
   </div>
 </div>
