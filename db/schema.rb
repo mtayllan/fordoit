@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_10_31_161358) do
   create_table "repeats", force: :cascade do |t|
     t.string "title", null: false
     t.integer "days", default: [], array: true
-    t.datetime "hits", default: [], array: true
+    t.date "hits", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
