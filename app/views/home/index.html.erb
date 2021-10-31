@@ -1,14 +1,14 @@
 <div class="flex px-5">
-  <div class="flex-1">
+  <div class="flex-1 mx-1">
     <%= render partial: 'tasks', locals: { task: @task, tasks: @tasks } %>
   </div>
-  <div class="flex-1 text-center">
+  <div class="flex-1 text-center mx-1">
     Repeats
   </div>
-  <div class="flex-1 text-center">
-    Events
+  <div class="flex-1 text-center mx-1">
+    <%= render partial: 'events', locals: { event: @event, events: @events } %>
   </div>
-  <div class="flex-1 text-center">
+  <div class="flex-1 text-center mx-1">
     <%= render partial: 'backlog', locals: { backlog_task: @backlog_task, backlog_tasks: @backlog_tasks } %>
   </div>
 </div>

@@ -4,5 +4,7 @@ class HomeController < ApplicationController
     @backlog_tasks = Task.in_backlog
     @task = Task.new
     @backlog_task = Task.new
+    @events = Event.not_done
+    @event = Event.new
   end
 end

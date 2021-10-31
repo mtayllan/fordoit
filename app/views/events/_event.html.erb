@@ -1,0 +1,16 @@
+<%= turbo_frame_tag dom_id(event) do %>
+  <div class="flex items-center gap-3 my-2">
+    <div class="w-full text-left">
+      <%= event.title %>
+      -
+      <%= event.datetime %>
+    </div>
+    <div>
+      <%= button_to 'Done', event_path(event), method: :patch, class: "p-1 text-blue-500 bg-transparent border-2 border-blue-500 rounded hover:text-white hover:bg-blue-500 cursor-pointer" %>
+    </div>
+    <div>
+      <%= button_to 'Remove', event_path(event), method: :delete, class: "p-1 text-red-500 bg-transparent border-2 border-red-500 rounded hover:text-white hover:bg-red-500 cursor-pointer" %>
+    </div>
+  </div>
+<% end %>
+
