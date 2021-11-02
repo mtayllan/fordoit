@@ -3,6 +3,9 @@ class Auth0Controller < ApplicationController
     auth_info = request.env["omniauth.auth"]
     session[:userinfo] = auth_info["extra"]["raw_info"]
 
+    auth0_id = session[:userinfo]["sub"].split("|")[1]
+    User.find_or_create_by(auth0_id: auth0_id)
+
     redirect_to "/"
   end
 
