@@ -1,4 +1,4 @@
-class RepeatsController < ApplicationController
+class RepeatsController < AuthenticatedController
   def create
     repeat = Repeat.new(repeat_params)
     repeat.save

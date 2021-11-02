@@ -1,4 +1,4 @@
-class InBacklogTasksController < ApplicationController
+class InBacklogTasksController < AuthenticatedController
   def create
     task = Task.new(task_params)
     task.status = :in_backlog

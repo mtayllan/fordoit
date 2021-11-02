@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class EventsController < AuthenticatedController
   def create
     event = Event.new(event_params)
     event.save

@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomeController < AuthenticatedController
   def index
     @tasks = Task.pending
     @backlog_tasks = Task.in_backlog

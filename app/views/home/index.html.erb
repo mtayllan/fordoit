@@ -1,3 +1,4 @@
+<%= button_to 'Logout', 'auth/logout', method: :get %>
 <div class="flex px-5">
   <div class="flex-1 mx-1">
     <%= render partial: 'tasks', locals: { task: @task, tasks: @tasks } %>

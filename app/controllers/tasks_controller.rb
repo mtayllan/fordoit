@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class TasksController < AuthenticatedController
   def create
     task = Task.new(task_params)
     task.save
