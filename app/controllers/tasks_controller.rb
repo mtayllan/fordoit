@@ -1,6 +1,7 @@
 class TasksController < AuthenticatedController
   def create
     task = Task.new(task_params)
+    task.user = current_user
     task.save
 
     render turbo_stream: [
@@ -10,7 +11,7 @@ class TasksController < AuthenticatedController
   end
 
   def update
-    task = Task.find(params[:id])
+    task = current_user.tasks.find(params[:id])
     task.update(status: params[:status])
 
     render turbo_stream: turbo_stream.replace(

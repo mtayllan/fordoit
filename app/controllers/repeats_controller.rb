@@ -1,6 +1,7 @@
 class RepeatsController < AuthenticatedController
   def create
     repeat = Repeat.new(repeat_params)
+    repeat.user = current_user
     repeat.save
 
     render turbo_stream: [
@@ -14,7 +15,7 @@ class RepeatsController < AuthenticatedController
   end
 
   def update
-    repeat = Repeat.find(params[:id])
+    repeat = current_user.repeats.find(params[:id])
     if params[:hit] == "done"
       repeat.update(hits: repeat.hits + [Date.today])
     elsif params[:hit] == "undo"
@@ -29,7 +30,7 @@ class RepeatsController < AuthenticatedController
   end
 
   def destroy
-    repeat = repeat.find(params[:id])
+    repeat = current_user.repeats.find(params[:id])
     repeat.destroy
 
     render turbo_stream: turbo_stream.remove(dom_id(repeat))

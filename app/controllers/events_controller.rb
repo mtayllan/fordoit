@@ -1,6 +1,7 @@
 class EventsController < AuthenticatedController
   def create
     event = Event.new(event_params)
+    event.user = current_user
     event.save
 
     render turbo_stream: [
@@ -14,14 +15,14 @@ class EventsController < AuthenticatedController
   end
 
   def update
-    event = Event.find(params[:id])
+    event = current_user.events.find(params[:id])
     event.update(done_at: Time.zone.now)
 
     render turbo_stream: turbo_stream.remove(dom_id(event))
   end
 
   def destroy
-    event = Event.find(params[:id])
+    event = current_user.events.find(params[:id])
     event.destroy
 
     render turbo_stream: turbo_stream.remove(dom_id(event))
