@@ -12,7 +12,7 @@ class TasksController < AuthenticatedController
 
   def update
     task = current_user.tasks.find(params[:id])
-    task.update(status: params[:status])
+    task.update(status: params[:status], ended_at: Time.zone.now)
 
     render turbo_stream: turbo_stream.replace(
       dom_id(task),
