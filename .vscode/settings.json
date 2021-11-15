@@ -9,5 +9,6 @@
   "[ruby]": {
     "editor.defaultFormatter": "rebornix.ruby"
   },
-  "standard.autoFixOnSave": true
+  "standard.autoFixOnSave": true,
+  "explorer.sortOrder": "mixed"
 }
