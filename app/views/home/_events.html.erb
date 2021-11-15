@@ -1,7 +1,7 @@
 <%= turbo_stream_from :events %>
 <div class="container mx-auto flex flex-col content-center mt-5 lg:mt-10">
   <!-- header -->
-  <h2 class="text-xl text-center mb-2">Events</h2>
+  <%= render(SectionTitleComponent.new(title: "Events")) %>
 
   <!-- form -->
   <div class="mb-2">
