@@ -1,6 +1,6 @@
 <%= form_with(model: task, url: in_backlog_tasks_path, id: 'in_backlog_task_form') do |f| %>
   <div class="flex">
     <%= render(TextInputComponent.new(name: :title, form: f, placeholder: "Add to Backlog")) %>
-    <%= f.submit "Add", class: "p-2 text-blue-500 bg-transparent border-2 border-blue-500 rounded hover:text-white hover:bg-blue-500 cursor-pointer" %>
+    <%= render(AddButtonComponent.new) %>
   </div>
 <% end %>
