@@ -24,9 +24,9 @@ gem "redis", '~> 4.0'
 # gem 'image_processing', '~> 1.2'
 
 gem "hotwire-rails"
-gem "redis", "~> 4.0"
 gem "omniauth-auth0", "~> 3.0"
 gem "omniauth-rails_csrf_protection", "~> 1.0" # prevents forged authentication requests
+gem "view_component"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
