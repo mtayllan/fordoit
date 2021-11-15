@@ -1,4 +1,4 @@
-<%= button_to 'Logout', 'auth/logout', method: :get %>
+<%= render(NavbarComponent.new) %>
 <div class="flex flex-col lg:flex-row px-5">
   <div class="flex-1 mx-1 border-b-4 lg:border-b-0 mb-3 pb-3 border-blue-500	">
     <%= render partial: 'tasks', locals: { task: @task, tasks: @tasks } %>
