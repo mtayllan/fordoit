@@ -1,0 +1,11 @@
+<input
+  type="checkbox"
+  class="select-none appearance-none inline-block align-middle
+        bg-origin-border flex-shrink-0 h-4 w-4 text-blue-800
+        bg-transparent border-blue-800 border rounded-full
+        checked:bg-blue-600 checked:border-transparent"
+  data-controller="checker"
+  data-action="click->checker#submitAction"
+/>
+
+<%= button_to "submit", @action, method: :patch, class: "hidden" %>
