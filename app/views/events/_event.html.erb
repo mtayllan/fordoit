@@ -6,7 +6,7 @@
     <div class="flex-1">
       <%= event.title %>
       -
-      <%= event.datetime %>
+      <%= event.datetime.to_formatted_s(:long) %>
     </div>
     <div class="flex-1 text-right">
       <%= button_to 'Remove', event_path(event), method: :delete, class: "p-1 text-red-500 bg-transparent border-2 border-red-500 rounded hover:text-white hover:bg-red-500 cursor-pointer" %>
