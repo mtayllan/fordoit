@@ -1,6 +1,6 @@
 <%= turbo_frame_tag dom_id(repeat) do %>
-  <div class="flex items-center gap-3 my-2">
-    <% if repeat.hits.include?(Date.today) %>
+  <% if repeat.hits.include?(Date.today) %>
+    <div class="flex items-center gap-3 my-2">
       <div class="w-full text-left line-through text-blue-500">
         <%= repeat.title %>
       </div>
@@ -10,17 +10,19 @@
       <div>
         <%= button_to 'Terminate', repeat_path(repeat), method: :delete, class: "p-1 text-red-500 bg-transparent border-2 border-red-500 rounded hover:text-white hover:bg-red-500 cursor-pointer" %>
       </div>
-    <% else %>
-      <div class="w-full text-left">
+    </div>
+  <% else %>
+    <div class="flex w-full gap-x-3">
+      <div class="flex-none">
+        <%= render(CheckerComponent.new(action: repeat_path(repeat, hit: :done))) %>
+      </div>
+      <div class="flex-1">
         <%= repeat.title %>
       </div>
-      <div>
-        <%= button_to 'Done', repeat_path(repeat, hit: :done), method: :patch, class: "p-1 text-blue-500 bg-transparent border-2 border-blue-500 rounded hover:text-white hover:bg-blue-500 cursor-pointer" %>
-      </div>
-      <div>
+      <div class="flex-1 text-right">
         <%= button_to 'Terminate', repeat_path(repeat), method: :delete, class: "p-1 text-red-500 bg-transparent border-2 border-red-500 rounded hover:text-white hover:bg-red-500 cursor-pointer" %>
       </div>
-    <% end%>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 
