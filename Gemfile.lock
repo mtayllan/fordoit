@@ -127,6 +127,10 @@ GEM
     msgpack (1.4.5)
     multi_json (1.15.0)
     multi_xml (0.6.0)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
     net-pop (0.1.1)
       digest
       net-protocol
@@ -273,6 +277,7 @@ GEM
       rubocop-performance (= 1.13.2)
     stimulus-rails (1.0.3)
       railties (>= 6.0.0)
+    strscan (3.0.1)
     thor (1.2.1)
     tilt (2.0.10)
     timeout (0.2.0)
@@ -322,6 +327,7 @@ DEPENDENCIES
   dotenv-rails
   hotwire-rails
   listen (~> 3.3)
+  net-imap
   net-pop
   net-smtp
   omniauth-auth0 (~> 3.0)
