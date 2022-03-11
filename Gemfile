@@ -32,6 +32,7 @@ gem "view_component"
 gem "bootsnap", ">= 1.4.4", require: false
 
 gem "net-smtp"
+gem "net-pop"
 
 group :development, :test do
   gem "dotenv-rails"

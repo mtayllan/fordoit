@@ -127,6 +127,10 @@ GEM
     msgpack (1.4.5)
     multi_json (1.15.0)
     multi_xml (0.6.0)
+    net-pop (0.1.1)
+      digest
+      net-protocol
+      timeout
     net-protocol (0.1.2)
       io-wait
       timeout
@@ -318,6 +322,7 @@ DEPENDENCIES
   dotenv-rails
   hotwire-rails
   listen (~> 3.3)
+  net-pop
   net-smtp
   omniauth-auth0 (~> 3.0)
   omniauth-rails_csrf_protection (~> 1.0)
