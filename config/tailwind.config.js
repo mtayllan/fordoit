@@ -1,11 +1,11 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: [
-    "./app/**/*.html.erb",
-    "./app/helpers/**/*.rb",
-    "./app/javascript/**/*.js",
-    "./app/javascript/**/*.vue",
+  content: [
+    './app/helpers/**/*.rb',
+    './app/javascript/**/*.js',
+    './app/views/**/*.{erb,haml,html,slim}',
+    './app/components/**/*.html.*'
   ],
   presets: [],
   darkMode: false, // or 'media' or 'class'
@@ -182,9 +182,6 @@ module.exports = {
       200: '2',
     },
     container: {},
-    content: {
-      none: 'none',
-    },
     cursor: {
       auto: 'auto',
       default: 'default',
@@ -972,5 +969,9 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+  ]
 }
