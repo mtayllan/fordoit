@@ -23,7 +23,6 @@ gem "importmap-rails"
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails"
 
-gem "hotwire-rails"
 gem "omniauth-auth0", "~> 3.0"
 gem "omniauth-rails_csrf_protection", "~> 1.0" # prevents forged authentication requests
 gem "view_component"
