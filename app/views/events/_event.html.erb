@@ -1,16 +1,4 @@
 <%= turbo_frame_tag dom_id(event) do %>
-  <div class="flex w-full gap-x-3">
-    <div class="flex-none">
-      <%= render(CheckerComponent.new(action: event_path(event))) %>
-    </div>
-    <div>
-      <%= event.title %>
-      -
-      <%= event.datetime.to_formatted_s(:long) %>
-    </div>
-    <div class="flex-1 text-right">
-      <%= button_to 'Remove', event_path(event), method: :delete, class: "p-1 text-red-500 bg-transparent border-2 border-red-500 rounded hover:text-white hover:bg-red-500 cursor-pointer" %>
-    </div>
-  </div>
+  <%= render EventItemComponent.new(event: event) %>
 <% end %>
 
