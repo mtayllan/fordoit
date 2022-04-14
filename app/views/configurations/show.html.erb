@@ -1,0 +1,10 @@
+<div class="container max-w-sm mx-auto">
+  <h1 class="text-3xl">Configurações</h1>
+  <%= form_with(model: @user, url: configurations_path) do |f| %>
+    <div class="flex flex-col">
+      <%= f.label :timezone %>
+      <%= f.time_zone_select :timezone, nil, class: "w-full shadow border rounded mr-2 p-2" %>
+      <%= f.submit "Save", class: "mt-2 p-1 text-blue-500 bg-transparent border-2 border-blue-500 rounded hover:text-white hover:bg-blue-500 cursor-pointer" %>
+    </div>
+  <% end %>
+</div>
