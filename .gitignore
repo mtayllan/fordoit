@@ -34,3 +34,6 @@
 !/app/assets/builds/.keep
 
 .env
+
+/node_modules
+yarn-error.log
