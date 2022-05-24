@@ -4,7 +4,7 @@ class HomeController < AuthenticatedController
     @backlog_tasks = current_user.tasks.in_backlog
     @events = current_user.events.not_done.order(datetime: :asc)
     @today_repeats = current_user.repeats.where("days @> ARRAY[?]::integer[]", [Date.today.wday])
-    @other_repeats = @today_repeats.invert_where
+    @other_repeats = current_user.repeats.where.not("days @> ARRAY[?]::integer[]", [Date.today.wday])
 
     @task = Task.new
     @backlog_task = Task.new
