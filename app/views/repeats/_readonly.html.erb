@@ -1,0 +1,16 @@
+<div class="flex flex-col mb-1">
+  <div> <%= repeat.title %> </div>
+  <div class="flex fle-row gap-x-0.5 mt-1">
+    <% ['S', 'M', 'T', 'W', 'T', 'F', 'S'].each_with_index do |day_initial, day_index| %>
+      <div class="
+        text-xs
+        inline-flex
+        justify-center
+        items-center
+        <%= repeat.days.include?(day_index) ? "text-primary-content bg-primary" : "text-neutral-content bg-neutral" %>
+        h-4 w-4 rounded-full
+      "><%= day_initial %></div>
+    <% end %>
+  </div>
+  <%= %>
+</div>
